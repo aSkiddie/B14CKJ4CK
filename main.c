@@ -43,9 +43,11 @@ int main(int argc, char **argv)
 	for(int i = 0; i <= 25; i++)
 		cards[i] = i;
 	
-	shuffle(cards);
+	shuffle(cards, 26);
+	
+	switch(cards)
+		case :
 
-	printf("%d\n",cards[5]);
-
+	
 	return 0;
 }

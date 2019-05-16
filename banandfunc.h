@@ -17,25 +17,27 @@ void gotline(char *a, int MaxLen)
 	*a = '\0';
 }
 
-
-void shuffle(int *deck)
+void swap (int *a, int *b)
 {
-	int left[13];
-	int right[13];
-	int x;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
 
-	for (x = 0; x < 13; x++)
+void shuffle(int *arr, int n)
+{
+	srand ( time(NULL) );
+	
+	for (int i = n-1; i > 0; i--)
 	{
-		left[x] = *(deck+x);
-		right[x] = *(deck+13+x);
-	}
-
-	for (x=0; x < 13; x++)
-	{
-		*(deck+(x*2)) = left[x];
-		*(deck+(x*2)+1) = right[x];
+		int j = rand() % (i+1);
+		
+		swap(&arr[i], &arr[j]);
 	}
 }
+
+
+
 
 void Banner()
 {
