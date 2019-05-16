@@ -1,51 +1,98 @@
 #include "banandfunc.h"
 
-#define Ace 12
-#define King 11
-#define Queen 10
-#define Jack 9
-#define Ten 8
-#define Nine 7
-#define Eight 6
-#define Seven 5
-#define Six 4
-#define Five 3
-#define Four 2
-#define Three 1
-#define Two 0
 
-#define TWO 13
-#define THREE 14
-#define FOUR 15
-#define FIVE 16
-#define SIX 17
-#define SEVEN 18
-#define EIGHT 19
-#define NINE 20
-#define TEN 21
-#define JACK 22
-#define QUEEN 23
-#define KING 24
-#define ACE 25
+#define TWO  0
+#define THREE  1
+#define FOUR  2
+#define FIVE  3
+#define SIX  4
+#define SEVEN 5
+#define EIGHT 6
+#define NINE  7
+#define TEN  8
+#define JACK 9
+#define QUEEN 10
+#define KING 11
+#define ACE 12
 
-
+struct stats {
+	char a[6];
+	int card[12];
+	int score;
+};
+	
 
 
 int main(int argc, char **argv)
 {
 	
-	int cards[26];	
+	int cards[13];	
 
 	Banner();
 	sleep(2);
 	
 
-	for(int i = 0; i <= 25; i++)
+	for(int i = 0; i <= 12; i++)
 		cards[i] = i;
 	
-	shuffle(cards);
+	shuffle(cards, 13);
+	
+		
+	switch(cards[0]) {
 
-	printf("%d\n",cards[5]);
-
+		case ACE:
+			Ace();
+			Banner();
+			break;
+		case KING:
+			King();
+			Banner();
+			break;
+		case QUEEN:
+			Queen();
+			Banner();
+			break;
+		case JACK:
+			Jack();
+			Banner();
+			break;
+		case TEN:
+			Ten();
+			Banner();
+			break;
+		case NINE:
+			Nine();
+			Banner();
+			break;
+		case EIGHT:
+			Eight();
+			Banner();
+			break;
+		case SEVEN:
+			Seven();
+			Banner();
+			break;
+		case SIX:
+			Six();
+			Banner();
+			break;
+		case FIVE:
+			Five();
+			Banner();
+			break;
+		case FOUR:
+			Four();
+			Banner();
+			break;
+		case THREE:
+			Three();
+			Banner();
+			break;
+		case TWO:
+			Two();
+			Banner();
+			break;
+	}
+	
 	return 0;
 }
